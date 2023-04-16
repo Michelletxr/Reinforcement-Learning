@@ -40,4 +40,11 @@ for x in [1,1,2,2,1,2]:
     print(env.render())
 
 
-env = gym.make('FrozenLakeNotSlippery-v0', render_mode='ansi')
+# Make the environment based on deterministic policy
+environment = gym.make("FrozenLake-v1", is_slippery=False, render_mode='ansi')
+#environment.seed(8)
+environment.reset()
+for i in range(10):
+    action = 2
+    print(environment.step(action))
+    print(environment.render())
